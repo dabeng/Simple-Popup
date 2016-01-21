@@ -1,0 +1,231 @@
+@font-face { 
+font-family: Monospace;
+src: url("../fonts/MonospaceTypewriter.ttf");
+}
+
+/* customized bootstrap navbar styles */
+.navbar-default {
+  background-color: #337ab7;
+  border-color: rgba(17, 8, 101, 0.5);
+  font-weight: bold;
+}
+.navbar-default .navbar-brand {
+  color: #cdddf7;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-text {
+  color: #cdddf7;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #cdddf7;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #110865;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #110865;
+}
+.navbar-default .navbar-toggle {
+  border-color: #110865;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #110865;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #cdddf7;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #cdddf7;
+}
+.navbar-default .navbar-link {
+  color: #cdddf7;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #cdddf7;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #110865;
+  }
+}
+
+.page-header {
+  padding: 0px 20px;
+  margin-top: 10px;
+  background-color: #110865;
+}
+
+.page-header h1 {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 48px;
+  position: relative;
+  top: 10px;
+  left: 50px;
+}
+
+p {
+  font-family: Arial;
+  font-size: 1.2em;
+}
+
+.page-footer {
+  background-color: #110865;
+  color: #ccc;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.page-footer address {
+  margin-top: 30px;
+}
+
+.page-footer a {
+  color: #ccc;
+}
+
+.page-footer a:hover {
+  color: #fff;
+  font-weight: bold;
+}
+
+.page-footer a:active {
+  color: #fff;
+}
+
+.page-footer a:visited {
+  color: #fff;
+}
+
+.logo {
+  height: 120px;
+}
+
+.btn {
+  font-weight: bold;
+}
+
+#response {
+  border: 2px dashed #aaa;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+#alert-overlay {
+  opacity: 0;
+  height: 0px;
+  overflow: hidden;
+  text-align: center;
+  background-color: rgba(0,0,0,0.3);
+}
+
+#alert-overlay.show-alert {
+  opacity: 1;
+  overflow: auto;
+  position: fixed;
+  height: auto;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.custom-alert {
+  position: relative;
+  display: inline-block;
+  margin-top: 200px;
+  max-width: 600px;
+  min-width: 400px;
+  overflow: hidden;
+  background-color: #fff;
+  text-align: center;
+}
+
+.alert-icon {
+  position: absolute;
+  display: block;
+  font-family: Arial;
+  border: 5px solid #fff;
+  border-radius: 59px;
+  top: -20px;
+  right: -20px;
+  width: 118px;
+  height: 118px;
+  line-height: 118px;
+  font-size: 118px;
+  color: #fff;
+  transition: text-shadow 0.3s ease, box-shadow 0.3s ease;
+  -moz-transition: text-shadow 0.3s ease, box-shadow 0.3s ease;
+  -webkit-transition: text-shadow 0.3s ease, box-shadow 0.3s ease;
+  -o-transition: text-shadow 0.3s ease, box-shadow 0.3s ease;
+}
+
+#alert-overlay.show-alert .alert-icon {
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+  box-shadow: 0 1px 0 #ccc,
+              0 2px 0 #c9c9c9,
+              0 3px 0 #bbb,
+              0 4px 0 #b9b9b9,
+              0 5px 0 #aaa,
+              0 6px 1px rgba(0,0,0,.1),
+              0 0 5px rgba(0,0,0,.1),
+              0 1px 3px rgba(0,0,0,.3),
+              0 3px 5px rgba(0,0,0,.2),
+              0 5px 10px rgba(0,0,0,.25),
+              0 10px 10px rgba(0,0,0,.2),
+              0 20px 20px rgba(0,0,0,.15);
+}
+
+#alert-overlay .prompt-box .alert-icon {
+  font-size: 80px;
+  line-height: 108px;
+}
+
+.alert-message {
+  position: relative;
+  padding: 20px 100px 20px 15px;
+  font-weight: bold;
+  color: #666;
+  text-align: left;
+}
+
+.alert-input {
+  margin-bottom: 30px;
+}
+
+.alert-buttons {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.alert-buttons .btn {
+  margin-left: 10px;
+}
+
