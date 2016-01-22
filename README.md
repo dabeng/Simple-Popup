@@ -1,5 +1,5 @@
 # Simple Popup
-Hope this small jquery snippet to help you replace all primitive alert boxes including alert, confirm, prompt.
+Hope this small jquery snippet to help you replace all primitive popup boxes of native javascript including alert box, confirm box, prompt box.
 
 ## [Demo](http://dabeng.github.io/Simple-Popup/)
 
