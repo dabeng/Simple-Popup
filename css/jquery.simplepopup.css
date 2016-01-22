@@ -1,3 +1,7 @@
+.remove-scrollbar {
+  overflow-y: hidden;
+}
+
 #popup-overlay {
   opacity: 0;
   height: 0px;

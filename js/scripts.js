@@ -12,7 +12,7 @@
     $('#btn-alert').on('click', function (event) {
       /*
         alert('An exception occurred.');
-        $('#response').text('The application has just got an exception.');
+        event.target.nextElementSibling.textContent = 'The application has just got an exception.';
       */
       var alertBox = simplePopup(0, 'An exception occurred.');
       $.when(alertBox).then(function() {
@@ -24,9 +24,9 @@
       /*
         var res = confirm('It\'s time to change. Do you agree with me?');
         if (res) {
-          $('#response').text('Yes, let\'s go for it.');
+          event.target.nextElementSibling.textContent = 'Yes, let\'s go for it.';
         } else {
-          $('#response').text('No, this is not the time.');
+          event.target.nextElementSibling.textContent = 'No, this is not the time.';
         }
       */
       var confirmBox = simplePopup(1, 'It\'s time to change. Do you agree with me?');
@@ -42,8 +42,8 @@
     $('#btn-prompt').on('click', function (event) {
       /*
         var username=prompt('Please enter your username', 'Michael Jordan');
-        if (username!=null && username!="") {
-          $('#response').text(username + ', hey, welcome back.');
+        if (username != null && username != '') {
+          event.target.nextElementSibling.textContent = username + ', hey, welcome back.';
         }
       */
       var promptBox = simplePopup(2, 'Please enter your username', 'Michael Jordan');

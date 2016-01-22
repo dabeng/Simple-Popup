@@ -33,25 +33,30 @@
       }
     };
     var bindButtonHandler = function(type) {
+      var body = document.querySelector('body');
       var overlay = $('#popup-overlay');
       var btns = overlay.find('.popup-buttons').children();
       if (type === 0) {
         btns.on('click', function() {
+          body.classList.remove('remove-scrollbar');
           overlay.removeClass('show-popup')
             .find('.simple-popup').data('dtd').resolve();
         });
       } else if (type === 1) {
         btns.filter('.btn-ok').on('click', function() {
+          body.classList.remove('remove-scrollbar');
           overlay.removeClass('show-popup')
             .find('.simple-popup').data('dtd').resolve(true);
         })
         .siblings('.btn-cancel').on('click', function() {
+          body.classList.remove('remove-scrollbar');
           overlay.removeClass('show-popup')
             .find('.simple-popup').data('dtd').resolve(false);
         });
       } else {
         overlay.find('.popup-input').on('keyup', function(event) {
           if (event.which === 13) {
+            body.classList.remove('remove-scrollbar');
             var value = event.target.value.trim();
             overlay.removeClass('show-popup')
               .find('.popup-input').val(defaultText)
@@ -59,12 +64,14 @@
           }
         });
         btns.filter('.btn-ok').on('click', function() {
+          body.classList.remove('remove-scrollbar');
           var value = overlay.find('.popup-input').val().trim();
           overlay.removeClass('show-popup')
             .find('.popup-input').val(defaultText)
             .parent().data('dtd').resolve(value);
         })
         .siblings('.btn-cancel').on('click', function() {
+          body.classList.remove('remove-scrollbar');
           overlay.removeClass('show-popup')
             .find('.popup-input').val(defaultText)
             .parent().data('dtd').resolve('');
@@ -123,7 +130,8 @@
         .find('.popup-icon').text(':)')
         .siblings('.popup-input').val(defaultText).select();
     }
-    $('#popup-overlay').addClass('show-popup')
+    $('body').addClass('remove-scrollbar')
+      .find('#popup-overlay').addClass('show-popup')
       .find('.simple-popup').data('dtd', dtd)
       .find('.popup-message').text(message);
 
