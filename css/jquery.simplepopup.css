@@ -1,4 +1,4 @@
-#alert-overlay {
+#popup-overlay {
   opacity: 0;
   height: 0px;
   overflow: hidden;
@@ -6,7 +6,7 @@
   background-color: rgba(0,0,0,0.3);
 }
 
-#alert-overlay.show-alert {
+#popup-overlay.show-popup {
   opacity: 1;
   overflow: auto;
   position: fixed;
@@ -17,7 +17,7 @@
   left: 0px;
 }
 
-.custom-alert {
+.simple-popup {
   position: relative;
   display: inline-block;
   margin-top: 200px;
@@ -28,7 +28,7 @@
   text-align: center;
 }
 
-.alert-icon {
+.popup-icon {
   position: absolute;
   display: block;
   font-family: Arial;
@@ -47,7 +47,7 @@
   -o-transition: text-shadow 0.3s ease, box-shadow 0.3s ease;
 }
 
-#alert-overlay.show-alert .alert-icon {
+#popup-overlay.show-popup .popup-icon {
   text-shadow: 0 1px 0 #ccc,
                0 2px 0 #c9c9c9,
                0 3px 0 #bbb,
@@ -74,12 +74,12 @@
               0 20px 20px rgba(0,0,0,.15);
 }
 
-#alert-overlay .prompt-box .alert-icon {
+#popup-overlay .prompt-box .popup-icon {
   font-size: 80px;
   line-height: 108px;
 }
 
-.alert-message {
+.popup-message {
   position: relative;
   padding: 20px 100px 20px 15px;
   font-weight: bold;
@@ -87,16 +87,16 @@
   text-align: left;
 }
 
-.alert-input {
+.popup-input {
   margin-bottom: 30px;
 }
 
-.alert-buttons {
+.popup-buttons {
   width: 100%;
   margin-bottom: 10px;
 }
 
-.alert-buttons button {
+.popup-buttons button {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
@@ -121,6 +121,6 @@
   border-radius: 4px;
 }
 
-.alert-buttons button:hover {
+.popup-buttons button:hover {
   box-shadow: 0 0 6px #aaa;
 }

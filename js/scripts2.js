@@ -5,18 +5,18 @@
 
   $(function() {
 
-    $('#btn-alert').on('click', function (event) {
+    $('#btn-alert').on('click', function () {
       /*
         alert('An exception occurred.');
         $('#response').text('The application has just got an exception.');
       */
       var alertBox = simplePopup(0, 'An exception occurred.');
       $.when(alertBox).then(function() {
-        $(event.target).next('.response').text('The application has just got an exception.');
+        $('#response').text('The application has just got an exception.');
       });
     });
 
-    $('#btn-confirm').on('click', function (event) {
+    $('#btn-confirm').on('click', function () {
       /*
         var res = confirm('It\'s time to change. Do you agree with me?');
         if (res) {
@@ -28,14 +28,14 @@
       var confirmBox = simplePopup(1, 'It\'s time to change. Do you agree with me?');
       $.when(confirmBox).then(function(res) {
         if (res) {
-          $(event.target).next('.response').text('Yes, let\'s go for it.');
+          $('#response').text('Yes, let\'s go for it.');
         } else {
-          $(event.target).next('.response').text('No, this is not the time.');
+          $('#response').text('No, this is not the time.');
         }
       });
     });
 
-    $('#btn-prompt').on('click', function (event) {
+    $('#btn-prompt').on('click', function () {
       /*
         var username=prompt('Please enter your username', 'Michael Jordan');
         if (username!=null && username!="") {
@@ -45,9 +45,9 @@
       var promptBox = simplePopup(2, 'Please enter your username', 'Michael Jordan');
       $.when(promptBox).then(function(res) {
         if (res) {
-          $(event.target).next('.response').text(res + ', hey, welcome back.');
+          $('#response').text(res + ', hey, welcome back.');
         } else {
-          $(event.target).next('.response').text('Anoymous user logs in.');
+          $('#response').text('Anoymous user logs in.');
         }
       });
     });

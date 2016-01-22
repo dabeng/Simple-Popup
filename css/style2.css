@@ -117,11 +117,8 @@ p {
   height: 120px;
 }
 
-.response {
+#response {
   border: 2px dashed #aaa;
   border-radius: 5px;
   padding: 20px;
 }
-
-
-
