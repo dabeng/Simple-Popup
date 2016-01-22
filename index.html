@@ -10,8 +10,9 @@
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
     <link rel="icon" type="image/x-icon" href="img/logo.ico">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/jquery.simplepopup.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/monokai_sublime.css">
+    <link rel="stylesheet" href="css/jquery.simplepopup.css">
     <link href="css/style.css" rel="stylesheet">
 
 </head>
@@ -23,19 +24,82 @@
         <img class="logo" src="img/logo.png">
         <h1>Dabeng's js studio</h1>
       </div>
+      <p class="bg-success code-heading">alert box of native js</p>
+      <pre>
+        <code class="javascript">
+          alert('An exception occurred.');
+          event.target.nextElementSibling.textContent = 'The application has just got an exception.';
+        </code>
+      </pre>
+      <p class="bg-success code-heading">Simple Popup alternative</p>
+      <pre>
+        <code class="javascript">
+          var alertBox = simplePopup(0, 'An exception occurred.');
+          $.when(alertBox).then(function() {
+            $(event.target).next().text('The application has just got an exception.');
+          });
+        </code>
+      </pre>
       <button type="button" class="btn btn-success" id="btn-alert">Alert Box</button>
       <h2 class="response"></h2>
+      <p class="bg-success code-heading">alert box of native js</p>
+      <pre>
+        <code class="javascript">
+          var res = confirm('It\'s time to change. Do you agree with me?');
+          if (res) {
+            event.target.nextElementSibling.textContent = 'Yes, let\'s go for it.';
+          } else {
+            event.target.nextElementSibling.textContent = 'No, this is not the time.';
+          }
+        </code>
+      </pre>
+      <p class="bg-success code-heading">Simple Popup alternative</p>
+      <pre>
+        <code class="javascript">
+          var confirmBox = simplePopup(1, 'It\'s time to change. Do you agree with me?');
+          $.when(confirmBox).then(function(res) {
+            if (res) {
+              $(event.target).next().text('Yes, let\'s go for it.');
+            } else {
+              $(event.target).next().text('No, this is not the time.');
+            }
+          });
+        </code>
+      </pre>
       <button type="button" class="btn btn-warning" id="btn-confirm">Confirm Box</button>
       <h2 class="response"></h2>
+      <p class="bg-success code-heading">alert box of native js</p>
+      <pre>
+        <code class="javascript">
+          var username = prompt('Please enter your username', 'Michael Jordan');
+          if (username != null && username != '') {
+            event.target.nextElementSibling.textContent = username + ', hey, welcome back.';
+          }
+        </code>
+      </pre>
+      <p class="bg-success code-heading">Simple Popup alternative</p>
+      <pre>
+        <code class="javascript">
+          var promptBox = simplePopup(2, 'Please enter your username', 'Michael Jordan');
+          $.when(promptBox).then(function(res) {
+            if (res) {
+              $(event.target).next().text(res + ', hey, welcome back.');
+            } else {
+              $(event.target).next().text('Anoymous user logs in.');
+            }
+          });
+        </code>
+      </pre>
       <button type="button" class="btn btn-danger" id="btn-prompt">Prompt Box</button>
       <h2 class="response"></h2>
     </div>
   </div>
   </div>
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.simplepopup.js"></script>
-  <script src="js/scripts.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/highlight.pack.js"></script>
+  <script type="text/javascript" src="js/jquery.simplepopup.js"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
   </body>
 </html>

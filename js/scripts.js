@@ -5,6 +5,10 @@
 
   $(function() {
 
+    $('code').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });  
+
     $('#btn-alert').on('click', function (event) {
       /*
         alert('An exception occurred.');
@@ -12,7 +16,7 @@
       */
       var alertBox = simplePopup(0, 'An exception occurred.');
       $.when(alertBox).then(function() {
-        $(event.target).next('.response').text('The application has just got an exception.');
+        $(event.target).next().text('The application has just got an exception.');
       });
     });
 

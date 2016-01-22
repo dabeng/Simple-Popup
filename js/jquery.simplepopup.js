@@ -121,9 +121,8 @@
       }
       $('#popup-overlay').find('.simple-popup').attr('class', 'simple-popup prompt-box')
         .find('.popup-icon').text(':)')
-        .siblings('.popup-input').val(defaultText).focus().select();
+        .siblings('.popup-input').val(defaultText).select();
     }
-
     $('#popup-overlay').addClass('show-popup')
       .find('.simple-popup').data('dtd', dtd)
       .find('.popup-message').text(message);
