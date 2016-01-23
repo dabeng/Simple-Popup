@@ -1,8 +1,6 @@
 .disable-scrollbar {
-  /*overflow-y: hidden;*/
   position: fixed; 
-    overflow-y: scroll;
-    width: 100%;
+  overflow-y: scroll;
 }
 
 #popup-overlay {
@@ -15,7 +13,6 @@
 
 #popup-overlay.show-popup {
   opacity: 1;
-  overflow: auto;
   position: fixed;
   height: auto;
   top: 0px;
