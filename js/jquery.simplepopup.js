@@ -36,12 +36,10 @@
       if ($(document).height() > $(window).height()) {
         var topOffset = $(document).scrollTop();
         $('body').addClass('disable-scrollbar').css('top', -topOffset + 'px').data('scrolltop', topOffset);
-        console.log('jj');
       }
     };
     var recoverOriginalScrollbar = function() {
       if ($(document).height() > $(window).height()) {
-        console.log('kk');
         $('body').removeClass('disable-scrollbar').css('top','');
         $(document).scrollTop($('body').data('scrolltop')); // compatible wirting for Chrome and Firefox
       }
@@ -57,7 +55,12 @@
             .find('.simple-popup').data('dtd').resolve();
         });
       } else if (type === 1) {
-        btns.filter('.btn-ok').on('click', function() {
+        btns.on('keyup', function(event) {
+          if (event.which >= 37 && event.which <= 40) {
+            $(event.target).siblings().focus();
+          }
+        })
+        .filter('.btn-ok').on('click', function() {
           recoverOriginalScrollbar();
           overlay.removeClass('show-popup')
             .find('.simple-popup').data('dtd').resolve(true);
@@ -115,7 +118,8 @@
         appendDisableScrollbar();
       }
       $('#popup-overlay').find('.simple-popup').attr('class', 'simple-popup alert-box')
-        .find('.popup-icon').text('!');
+        .find('.popup-icon').text('!')
+        .siblings('.popup-buttons').children('.btn-ok').focus();
     } else if (type === 1) { // confirm box
       if (!$('.simple-popup').length) {
         appendSimplePopup();
@@ -130,7 +134,8 @@
         appendDisableScrollbar();
       }
       $('#popup-overlay').find('.simple-popup').attr('class', 'simple-popup confirm-box')
-        .find('.popup-icon').text('?');
+        .find('.popup-icon').text('?')
+        .siblings('.popup-buttons').children('.btn-ok').focus();
     } else { // prompt box
       if (!$('.simple-popup').length) {
         appendSimplePopup();

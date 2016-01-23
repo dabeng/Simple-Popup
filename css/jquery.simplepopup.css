@@ -125,6 +125,6 @@
   border-radius: 4px;
 }
 
-.popup-buttons button:hover {
+.popup-buttons button:hover, button:focus {
   box-shadow: 0 0 6px #aaa;
 }
