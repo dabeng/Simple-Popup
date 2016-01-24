@@ -8,7 +8,7 @@ Hope this small jquery snippet to help you replace all primitive popup boxes of 
 
 1. Firstly, introduce jQuery(1.5+) into your page.
 2. Then, introduce assets(js + css) of Simple Popup into your page.
-3. Finally, replace any alert, confirm and prompt method in page with simplePopup method in page.
+3. Finally, replace any alert(), confirm() and prompt() method in page with simplePopup() method on page.
 
 ### Alert box of native js
 ```javascript
@@ -60,3 +60,5 @@ $.when(promptBox).then(function(res) {
   }
 });
 ```
+## killer Feature
+When you toggle the popup boxes with simpelPopup() method, the overlayed background keeps its position just where it was. 
