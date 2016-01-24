@@ -61,4 +61,5 @@ $.when(promptBox).then(function(res) {
 });
 ```
 ## killer Feature
-When you toggle the popup boxes with simpelPopup() method, the overlayed background keeps its position just where it was. 
+1. When you toggle the popup boxes with simpelPopup() method, the overlayed background keeps its position just where it was.
+2. As you can see above, this plugin help you rewrite the current code With the least code modifications.
