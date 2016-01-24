@@ -6,6 +6,10 @@ Hope this small jquery snippet to help you replace all primitive popup boxes of 
 
 ## Usage
 
+1. Firstly, introduce jQuery(1.5+) into your page.
+2. Then, introduce assets(js + css) of Simple Popup into your page.
+3. Finally, replace any alert, confirm and prompt method in page with simplePopup method in page.
+
 ### Alert box of native js
 ```javascript
 alert('An exception occurred.');
