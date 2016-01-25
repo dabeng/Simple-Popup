@@ -110,8 +110,7 @@
         bindButtonHandler(0);
       }
       $('#popup-overlay').find('.simple-popup').attr('class', 'simple-popup alert-box')
-        .find('.popup-icon').text('!')
-        .siblings('.popup-buttons').children('.btn-ok');
+        .find('.popup-icon').text('!');
     } else if (type === 1) { // confirm box
       if (!$('.simple-popup').length) {
         appendSimplePopup();
@@ -124,8 +123,7 @@
         bindButtonHandler(1);
       }
       $('#popup-overlay').find('.simple-popup').attr('class', 'simple-popup confirm-box')
-        .find('.popup-icon').text('?')
-        .siblings('.popup-buttons').children('.btn-ok');
+        .find('.popup-icon').text('?');
     } else { // prompt box
       if (!$('.simple-popup').length) {
         appendSimplePopup();
