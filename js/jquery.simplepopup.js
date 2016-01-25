@@ -45,7 +45,6 @@
       }
     };
     var bindButtonHandler = function(type) {
-      appendDisableScrollbar();
       var overlay = $('#popup-overlay');
       var btns = overlay.find('.popup-buttons').children();
       if (type === 0) {
@@ -55,12 +54,7 @@
             .find('.simple-popup').data('dtd').resolve();
         });
       } else if (type === 1) {
-        btns.on('keyup', function(event) {
-          if (event.which >= 37 && event.which <= 40) {
-            $(event.target).siblings().focus();
-          }
-        })
-        .filter('.btn-ok').on('click', function() {
+        btns.filter('.btn-ok').on('click', function() {
           recoverOriginalScrollbar();
           overlay.removeClass('show-popup')
             .find('.simple-popup').data('dtd').resolve(true);
@@ -114,12 +108,10 @@
         cleanupSimplePopup();
         appendPopupButtons(0);
         bindButtonHandler(0);
-      } else {
-        appendDisableScrollbar();
       }
       $('#popup-overlay').find('.simple-popup').attr('class', 'simple-popup alert-box')
         .find('.popup-icon').text('!')
-        .siblings('.popup-buttons').children('.btn-ok').focus();
+        .siblings('.popup-buttons').children('.btn-ok');
     } else if (type === 1) { // confirm box
       if (!$('.simple-popup').length) {
         appendSimplePopup();
@@ -130,12 +122,10 @@
         cleanupSimplePopup();
         appendPopupButtons(1);
         bindButtonHandler(1);
-      } else {
-        appendDisableScrollbar();
       }
       $('#popup-overlay').find('.simple-popup').attr('class', 'simple-popup confirm-box')
         .find('.popup-icon').text('?')
-        .siblings('.popup-buttons').children('.btn-ok').focus();
+        .siblings('.popup-buttons').children('.btn-ok');
     } else { // prompt box
       if (!$('.simple-popup').length) {
         appendSimplePopup();
@@ -148,14 +138,12 @@
         appendPopupInput();
         appendPopupButtons(2);
         bindButtonHandler(2);
-      } else {
-        appendDisableScrollbar();
       }
       $('#popup-overlay').find('.simple-popup').attr('class', 'simple-popup prompt-box')
         .find('.popup-icon').text(':)')
         .siblings('.popup-input').val(defaultText).select();
     }
-
+    appendDisableScrollbar();
     $('#popup-overlay').addClass('show-popup')
       .find('.simple-popup').data('dtd', dtd)
       .find('.popup-message').text(message);
