@@ -29,17 +29,16 @@
           event.target.nextElementSibling.textContent = 'No, this is not the time.';
         }
       */
-      var confirmBox = simplePopup(1, 'It\'s time to change. Do you agree with me?');
-      $.when(confirmBox).then(function(res) {
+      simplePopup(1, 'It\'s time to change. Do you agree with me?').then(function(res) {
         if (res) {
-          $(event.target).next('.response').text('Yes, let\'s go for it.');
+          event.target.nextElementSibling.textContent = 'Yes, let\'s go for it.';
         } else {
-          $(event.target).next('.response').text('No, this is not the time.');
+          event.target.nextElementSibling..textContent = 'No, this is not the time.';
         }
       });
-    });
+    }, false);
 
-    $('#btn-prompt').on('click', function (event) {
+    document.querySelector('#btn-prompt').add('click', function (event) {
       /*
         var username=prompt('Please enter your username', 'Michael Jordan');
         if (username != null && username != '') {
