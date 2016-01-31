@@ -17,8 +17,14 @@
       };
       var cleanupSimplePopup = function() {
         var overlay = document.querySelector('#popup-overlay');
-        overlay.querySelector('.popup-buttons').removeChild();
-        overlay.querySelector('.popup-input').removeChild();
+        var btns = overlay.querySelector('.popup-buttons');
+        while (btns.firstChild) {
+          btns.removeChild(btns.firstChild);
+        }
+        var input = overlay.querySelector('.popup-input');
+        if (input) {
+          input.parentNode.removeChild(input);
+        }
       };
       var appendPopupInput = function() {
         document.querySelector('#popup-overlay').querySelector('.popup-message')
@@ -27,16 +33,16 @@
       var appendPopupButtons = function(type) {
         var popupButtons = document.querySelector('#popup-overlay').querySelector('.popup-buttons');
         if (type === 0) {
-          popupButtons.insertAdjacentHTML('beforeend', '<button type="button" class="btn-ok">OK</button>'));
+          popupButtons.insertAdjacentHTML('beforeend', '<button type="button" class="btn-ok">OK</button>');
         } else {
           popupButtons.insertAdjacentHTML('beforeend', '<button type="button" class="btn-ok">OK</button>' +
-            '<button type="button" class="btn-cancel">Cancel</button>'));
+            '<button type="button" class="btn-cancel">Cancel</button>');
         }
       };
       var appendDisableScrollbar = function() {
         var body = document.body;
         if (body.scrollHeight > window.screen.availHeight) {
-          var topOffset = body.scrollTop;
+          var topOffset = body.scrollTop ? body.scrollTop : document.documentElement.scrollTop;
           body.classList.add('disable-scrollbar');
           body.style.top = -topOffset + 'px';
           body.dataset.scrolltop = topOffset;
@@ -44,30 +50,35 @@
       };
       var recoverOriginalScrollbar = function() {
         var body = document.body;
-        if (body.scrollHeight > window.screen.availHeight) {
+        if (body.dataset.scrolltop) {
           body.classList.remove('disable-scrollbar');
           body.style.top = '';
-          body.scrollTop = body.dataset.scrolltop;
+          if (body.scrollTop) {
+            body.scrollTop = body.dataset.scrolltop;
+          } else {
+            document.documentElement.scrollTop = body.dataset.scrolltop;
+          }
+          body.dataset.scrolltop = '';
         }
       };
       var bindButtonHandler = function(type) {
         var overlay = document.querySelector('#popup-overlay');
-        var btns = overlay.querySelector('.popup-buttons').children;
+        var btns = overlay.querySelector('.popup-buttons');
         if (type === 0) {
           btns.querySelector('.btn-ok').addEventListener('click', function() {
             recoverOriginalScrollbar();
-            overlay.classList.remove('show-popup')
+            overlay.classList.remove('show-popup');
             resolve();
           }, false);
         } else if (type === 1) {
           btns.querySelector('.btn-ok').addEventListener('click', function() {
             recoverOriginalScrollbar();
-            overlay.classList.remove('show-popup')
+            overlay.classList.remove('show-popup');
             resolve(true);
           }, false);
           btns.querySelector('.btn-cancel').addEventListener('click', function() {
             recoverOriginalScrollbar();
-            overlay.classList.remove('show-popup')
+            overlay.classList.remove('show-popup');
             resolve(false);
           }, false);
         } else {
@@ -111,28 +122,28 @@
           appendPopupButtons(0);
           bindButtonHandler(0);
           startIconTransition();
-        } else if (!document.querySelector('.alert-box')) {
+        } else {
           cleanupSimplePopup();
           appendPopupButtons(0);
           bindButtonHandler(0);
         }
         overlay = document.querySelector('#popup-overlay');
-        overlay.querySelector('.simple-popup').attr('class', 'simple-popup alert-box')
-        overlay.querySelector('#popup-overlay').querySelector('.popup-icon').text('!');
+        overlay.querySelector('.simple-popup').setAttribute('class', 'simple-popup alert-box');
+        overlay.querySelector('.popup-icon').textContent = '!';
       } else if (type === 1) { // confirm box
         if (!document.querySelector('.simple-popup')) {
           appendSimplePopup();
           appendPopupButtons(1);
           bindButtonHandler(1);
           startIconTransition();
-        } else if (!document.querySelector('.confirm-box')) {
+        } else {
           cleanupSimplePopup();
           appendPopupButtons(1);
           bindButtonHandler(1);
         }
         overlay = document.querySelector('#popup-overlay');
-        overlay.querySelector('.simple-popup').attr('class', 'simple-popup confirm-box')
-        overlay.querySelector('.popup-icon').text('?');
+        overlay.querySelector('.simple-popup').setAttribute('class', 'simple-popup confirm-box');
+        overlay.querySelector('.popup-icon').textContent = '?';
       } else { // prompt box
         if (!document.querySelector('.simple-popup')) {
           appendSimplePopup();
@@ -140,14 +151,14 @@
           appendPopupButtons(2);
           bindButtonHandler(2);
           startIconTransition();
-        } else if (!document.querySelector('.prompt-box')) {
+        } else {
           cleanupSimplePopup();
           appendPopupInput();
           appendPopupButtons(2);
           bindButtonHandler(2);
         }
         overlay = document.querySelector('#popup-overlay');
-        overlay.querySelector('.simple-popup').attr('class', 'simple-popup prompt-box')
+        overlay.querySelector('.simple-popup').setAttribute('class', 'simple-popup prompt-box');
         overlay.querySelector('.popup-icon').textContent = ':)';
         overlay.querySelector('.popup-input').value = defaultText;
         overlay.querySelector('.popup-input').select();
@@ -155,10 +166,9 @@
       appendDisableScrollbar();
       overlay.classList.add('show-popup');
       overlay.querySelector('.popup-message').textContent = message;
-    };
+    });
 
     return promise;
   };
-
 
 })();

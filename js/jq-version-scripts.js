@@ -31,14 +31,14 @@
       */
       simplePopup(1, 'It\'s time to change. Do you agree with me?').then(function(res) {
         if (res) {
-          event.target.nextElementSibling.textContent = 'Yes, let\'s go for it.';
+          $(event.target).next().text('Yes, let\'s go for it.');
         } else {
-          event.target.nextElementSibling..textContent = 'No, this is not the time.';
+          $(event.target).next().text('No, this is not the time.');
         }
       });
-    }, false);
+    });
 
-    document.querySelector('#btn-prompt').add('click', function (event) {
+    $('#btn-prompt').on('click', function (event) {
       /*
         var username=prompt('Please enter your username', 'Michael Jordan');
         if (username != null && username != '') {
