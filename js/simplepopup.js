@@ -42,7 +42,7 @@
       var appendDisableScrollbar = function() {
         var body = document.body;
         if (body.scrollHeight > window.screen.availHeight) {
-          var topOffset = body.scrollTop ? body.scrollTop : document.documentElement.scrollTop;
+          var topOffset = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
           body.classList.add('disable-scrollbar');
           body.style.top = -topOffset + 'px';
           body.dataset.scrolltop = topOffset;
@@ -53,11 +53,12 @@
         if (body.dataset.scrolltop) {
           body.classList.remove('disable-scrollbar');
           body.style.top = '';
-          if (body.scrollTop) {
+          // if (body.scrollTop) {
             body.scrollTop = body.dataset.scrolltop;
-          } else {
             document.documentElement.scrollTop = body.dataset.scrolltop;
-          }
+          // } else {
+            // document.documentElement.scrollTop = body.dataset.scrolltop;
+          // }
           body.dataset.scrolltop = '';
         }
       };
