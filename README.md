@@ -101,13 +101,13 @@ simplePopup(2, 'Please enter your username', 'Michael Jordan').then(function(res
 2. As you can see above, this plugin help you rewrite the current code With the least code modifications.
 
 ## Browser Support
-1. **Simple Popup of jquery version**
+**1. Simple Popup of jquery version**
   - Chrome 8.0+
   - Firefox 3.6+
   - Safari 3.1.2+
   - Opera 9.64+
 
-2. **Simple Popup of javascript version**
+**2. Simple Popup of javascript version**
   - Chrome 32.0+
   - Firefox 29.0+
   - Safari 7.1+
