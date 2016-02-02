@@ -8,12 +8,12 @@ Hope this small jquery snippet to help you replace all primitive popup boxes of 
 ![screen record](http://dabeng.github.io/Simple-Popup/screen-record.gif)
 
 ## Usage
-- jQuery version
+- **jQuery version**
   1. Firstly, introduce jQuery(1.5+) into your page.
   2. Then, introduce assets(js + css) of Simple Popup into your page.
   3. Finally, replace any alert(), confirm() and prompt() method in page with simplePopup() method on page.
 
-- native javascript version
+- **native javascript version**
   1. First, introduce assets(js + css, obviously, both of the two version use the same css file) of Simple Popup into your page.
   2. Then, replace any alert(), confirm() and prompt() method in page with simplePopup() 
 
@@ -101,14 +101,14 @@ simplePopup(2, 'Please enter your username', 'Michael Jordan').then(function(res
 2. As you can see above, this plugin help you rewrite the current code With the least code modifications.
 
 ## Browser Support
-1. Simple Popup of jquery version
-- Chrome 8.0+
-- Firefox 3.6+
-- Safari 3.1.2+
-- Opera 9.64+
+1. **Simple Popup of jquery version**
+  - Chrome 8.0+
+  - Firefox 3.6+
+  - Safari 3.1.2+
+  - Opera 9.64+
 
-2. Simple Popup of javascript version
-- Chrome 32.0+
-- Firefox 29.0+
-- Safari 7.1+
-- Opera 19+
+2. **Simple Popup of javascript version**
+  - Chrome 32.0+
+  - Firefox 29.0+
+  - Safari 7.1+
+  - Opera 19+
