@@ -9,14 +9,13 @@ Hope this small jquery snippet to help you replace all primitive popup boxes of 
 
 ## Usage
 - jQuery version
-
-1. Firstly, introduce jQuery(1.5+) into your page.
-2. Then, introduce assets(js + css) of Simple Popup into your page.
-3. Finally, replace any alert(), confirm() and prompt() method in page with simplePopup() method on page.
+  1. Firstly, introduce jQuery(1.5+) into your page.
+  2. Then, introduce assets(js + css) of Simple Popup into your page.
+  3. Finally, replace any alert(), confirm() and prompt() method in page with simplePopup() method on page.
 
 - native javascript version
-1. First, introduce assets(js + css, obviously, both of the two version use the same css file) of Simple Popup into your page.
-2. Then, replace any alert(), confirm() and prompt() method in page with simplePopup() 
+  1. First, introduce assets(js + css, obviously, both of the two version use the same css file) of Simple Popup into your page.
+  2. Then, replace any alert(), confirm() and prompt() method in page with simplePopup() 
 
 
 ### built-in alert box
