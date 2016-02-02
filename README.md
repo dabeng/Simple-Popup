@@ -3,6 +3,7 @@ Hope this small jquery snippet to help you replace all primitive popup boxes of 
 
 ## Demo
 [jQuery version](http://dabeng.github.io/Simple-Popup/jq-version.html)
+
 [navtive JS version](http://dabeng.github.io/Simple-Popup/js-version.html)
 ![screen record](http://dabeng.github.io/Simple-Popup/screen-record.gif)
 
